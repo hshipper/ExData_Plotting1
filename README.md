@@ -1,3 +1,11 @@
+* I used the following code in shell to shorten the text file to the desired
+range of dates:
+```bash
+## Computation done on CentOS 6.6
+head -n 1 household_power_consumption.txt > shortened_power.txt
+grep -E '\<[1-2]\/2{1}\/2007.*\>' household_power_consumption.txt >> shortened_power.txt
+```
+
 ## Introduction
 
 This assignment uses data from
@@ -50,15 +58,6 @@ memory (most modern computers should be fine).
 2007-02-02. One alternative is to read the data from just those dates
 rather than reading in the entire dataset and subsetting to those
 dates.
-
-* I used the following code in shell to shorten the text file to the desired
-range of dates:
-```bash
-## Computation done on CentOS 6.6
-head -n 1 household_power_consumption.txt > shortened_power.txt
-grep -E '\<[1-2]\/2{1}\/2007.*\>' household_power_consumption.txt 
->> shortened_power.txt
-```
 
 * You may find it useful to convert the Date and Time variables to
 Date/Time classes in R using the `strptime()` and `as.Date()`
