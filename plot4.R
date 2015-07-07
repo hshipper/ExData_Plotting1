@@ -6,6 +6,8 @@
 
 pwr <- read.table("shortened_power.txt", header = TRUE, sep = ";")
 
+png(filename = "plot4.png", width = 480, height = 480)
+
 par(mfrow = c(2, 2))
 
 plot(pwr$Global_active_power, type = "l",
@@ -28,4 +30,4 @@ plot(pwr$Global_reactive_power, type = "l",
      xaxt = 'n', ylab = "Global_reactive_power", xlab = "datetime")
 axis(1, at=c(0, 1441, 2881), labels = c("Thu", "Fri", "Sat"))
 
-png(filename = "plot4.png", width = 480, height = 480)
+dev.off() # Writes plot to file
